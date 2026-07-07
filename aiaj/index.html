@@ -1,13 +1,214 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <title>AIAJ</title>
-</head>
-<body>
-    <h1>Benvenuto nella sezione AIAJ</h1>
-    <p>Questa è la pagina dedicata al progetto AIAJ.</p>
 
-    <p><a href="/">Torna alla Home</a></p>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Artificial Intelligence and Justice</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f5f7fa;
+    color:#333;
+}
+
+header{
+    background:#143d6b;
+    color:white;
+    padding:30px;
+    text-align:center;
+}
+
+header img{
+    max-width:220px;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+
+.container{
+    width:90%;
+    max-width:1000px;
+    margin:auto;
+    padding:30px;
+}
+
+.card{
+    background:white;
+    border-radius:12px;
+    box-shadow:0 3px 10px rgba(0,0,0,.12);
+    padding:25px;
+    margin-bottom:25px;
+}
+
+h2{
+    color:#143d6b;
+}
+
+details{
+    margin-bottom:15px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    background:#fafafa;
+}
+
+summary{
+    padding:15px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+summary:hover{
+    background:#eef4fb;
+}
+
+ul{
+    list-style:none;
+    padding:10px 25px 20px;
+    margin:0;
+}
+
+li{
+    padding:8px 0;
+}
+
+a{
+    color:#0055aa;
+    text-decoration:none;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+.search{
+    width:100%;
+    padding:12px;
+    font-size:16px;
+    border-radius:8px;
+    border:1px solid #bbb;
+    margin-bottom:25px;
+}
+
+footer{
+    text-align:center;
+    color:#666;
+    margin:40px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<img src="immagini/copertina.jpg" alt="Copertina">
+
+<h1>Artificial Intelligence and Justice</h1>
+
+<p>Documentazione, articoli, presentazioni e materiali.</p>
+
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2>Cerca un documento</h2>
+
+<input class="search"
+type="text"
+id="search"
+placeholder="Scrivi una parola..."
+onkeyup="searchDocs()">
+
+</div>
+
+<div class="card">
+
+<details open>
+
+<summary>📄 Articoli</summary>
+
+<ul>
+
+<li><a href="pdf/articolo1.pdf" target="_blank">Articolo 1</a></li>
+
+<li><a href="pdf/articolo2.pdf" target="_blank">Articolo 2</a></li>
+
+<li><a href="pdf/articolo3.pdf" target="_blank">Articolo 3</a></li>
+
+</ul>
+
+</details>
+
+<details>
+
+<summary>🎓 Presentazioni</summary>
+
+<ul>
+
+<li><a href="pdf/presentazione1.pdf" target="_blank">Presentazione 1</a></li>
+
+<li><a href="pdf/presentazione2.pdf" target="_blank">Presentazione 2</a></li>
+
+</ul>
+
+</details>
+
+<details>
+
+<summary>📚 Rapporti e Documentazione</summary>
+
+<ul>
+
+<li><a href="pdf/report1.pdf" target="_blank">Rapporto annuale</a></li>
+
+<li><a href="pdf/report2.pdf" target="_blank">Documento tecnico</a></li>
+
+</ul>
+
+</details>
+
+</div>
+
+</div>
+
+<footer>
+
+<a href="/">← Torna alla Home</a>
+
+</footer>
+
+<script>
+
+function searchDocs(){
+
+let input=document.getElementById("search").value.toLowerCase();
+
+let li=document.getElementsByTagName("li");
+
+for(let i=0;i<li.length;i++){
+
+let txt=li[i].innerText.toLowerCase();
+
+if(txt.indexOf(input)>-1)
+    li[i].style.display="";
+else
+    li[i].style.display="none";
+
+}
+
+}
+
+</script>
+
 </body>
+
 </html>
